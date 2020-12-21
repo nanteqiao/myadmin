@@ -1,17 +1,14 @@
 <!--  -->
 <template>
-<div class='myadmin-home'>
-   <top-header></top-header>
-   
+<div class=''>
+<top-header></top-header>
 </div>
 </template>
+
 <script>
 //这里可以导入其他文件（比如：组件，工具js，第三方插件js，json文件，图片文件等等）
 //例如：import 《组件名称》 from '《组件路径》';
-import TopHeader from "@/components/top-header.vue"
-import {getTotalUser} from "@/api/api"
-import {getTodayUser} from "@/api/api"
-// import TopHeader from './top-header.vue';
+import TopHeader from "./top-header"
 export default {
 //import引入的组件需要注入到对象中才能使用
 components: {
@@ -20,31 +17,20 @@ components: {
 data() {
 //这里存放数据
 return {
-    totalUser:0,
-    todayUser:0,
-    totalOrder:0,
-    todayOrder:0,
-    totalAdmin:0,
-    todayAdmin:0
+
 };
 },
-//登录、注册、订单管理、订单评价、用户信息管理（姓名、电话、收货地址）、商家信息管理（商品列表）、添加商铺、
 //监听属性 类似于data概念
 computed: {},
 //监控data中的数据变化
 watch: {},
 //方法集合
 methods: {
-   
+
 },
 //生命周期 - 创建完成（可以访问当前this实例）
-async created() {
-    getTotalUser().then(res=>{
-        console.log(res);
-    })
-    getTodayUser(2020/12/19).then(res=>{
-        console.log(res);
-    })
+created() {
+
 },
 //生命周期 - 挂载完成（可以访问DOM元素）
 mounted() {
@@ -59,6 +45,6 @@ destroyed() {}, //生命周期 - 销毁完成
 activated() {}, //如果页面有keep-alive缓存功能，这个函数会触发
 }
 </script>
-<style lang="less" scoped>
-  
+<style  scoped>
+
 </style>

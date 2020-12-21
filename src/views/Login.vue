@@ -12,7 +12,6 @@
             </el-form-item>
             <el-form-item>
                 <el-button type="primary" @click="handleLogin('loginForm')" class="login-button">登录</el-button>
-                
             </el-form-item>
         </el-form>
         <div class="login-p">
@@ -55,12 +54,13 @@ handleLogin:function(loginForm){
     console.log("提交信息");
     this.$refs[loginForm].validate(async (valid)=>{
         if(valid){
+            console.log(valid);
             this.$message("检验成功了");
             let result = await login({
               user_name: this.form.username,
               password: this.form.password,
-            })
-          console.log(result);
+            });
+          console.log("result",result);
           if(result.status===1){
               this.$message("登录成功")
               this.$router.push("dashboard");

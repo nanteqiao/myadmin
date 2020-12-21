@@ -8,7 +8,7 @@ Vue.use(VueRouter)
 let originalPush = VueRouter.prototype.push;
 VueRouter.prototype.push = function(location){
   return originalPush.call(this,location).catch((err)=>{
-    
+    console.log(err);
   })
 }
 const routes = [
@@ -27,7 +27,13 @@ const routes = [
     children:[
       {
         path:"",
-        component:()=>import("../components/Home")
+        component:()=>import("../components/Home"),
+        meta:[{name:"首页",to:"/dashboard"}]
+      },
+      {
+        path:"/shoplist",
+        component:()=>import("../components/ShopList"),
+        meta:[{name:"首页",to:"/dashboard"},{name:"数据管理",to:""},{name:"商家列表",to:""}]
       }
     ]
   }

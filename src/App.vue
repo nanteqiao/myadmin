@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-   
     <router-view/>
+    <!-- <router-view></router-view> -->
   </div>
 </template>
 
@@ -15,6 +15,4 @@
   margin: 0;
   box-sizing: border-box;
 }
-
-
 </style>

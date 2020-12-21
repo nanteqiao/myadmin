@@ -7,7 +7,7 @@
             text-color="white" 
             active-text-color="#2986e8"
             background-color="#1f2d3d" 
-            default-active="dashboard"
+            :default-active="defaultActive"
             :style="{height:'100vh'}"
             router
             >
@@ -59,7 +59,7 @@ components: {},
 data() {
 //这里存放数据
 return {
-
+defaultActive:"dashboard"
 };
 },
 //监听属性 类似于data概念
@@ -76,7 +76,7 @@ created() {
 },
 //生命周期 - 挂载完成（可以访问DOM元素）
 mounted() {
-
+    this.defaultActive = location.hash.slice(2) || "dashboard"
 },
 beforeCreate() {}, //生命周期 - 创建之前
 beforeMount() {}, //生命周期 - 挂载之前
